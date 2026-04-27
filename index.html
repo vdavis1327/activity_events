@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Events Activity</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        .highlight {
+            color: white;
+            background-color: blue;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <h1>Using jQuery Selectors and Events</h1>
+
+    
+    <button id="btnClick">Click Me</button>
+
+    <p id="dblClickText">Double-click this paragraph</p>
+
+    <img id="hoverImage" src="https://via.placeholder.com/150" alt="Sample Image">
+
+    
+    <script>
+        $(document).ready(function(){
+
+            // Click Event
+            $("#btnClick").click(function(){
+                $(this).text("Button Clicked!");
+            });
+
+            // Double Click Event
+            $("#dblClickText").dblclick(function(){
+                $(this).toggleClass("highlight");
+            });
+
+            // Hover Event
+            $("#hoverImage").hover(function(){
+                $(this).fadeOut();
+            });
+
+        });
+    </script>
+
+    <!-- Description List -->
+    <h2>jQuery Selectors Used</h2>
+    <dl>
+        <dt>ButtonClick</dt>
+        <dd>Selects the button using its ID. The click event changes its text.</dd>
+
+        <dt>Double Click</dt>
+        <dd>Selects the paragraph using its ID. The double-click event toggles a CSS class.</dd>
+
+        <dt>Hover Image</dt>
+        <dd>Selects the image using its ID. The hover event hides the image with a fade effect.</dd>
+
+        <dt>Document Ready</dt>
+        <dd>Ensures the jQuery code runs only after the page has fully loaded.</dd>
+    </dl>
+
+</body>
+</html>
